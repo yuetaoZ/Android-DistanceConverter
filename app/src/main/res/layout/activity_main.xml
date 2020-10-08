@@ -6,57 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="180dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Miles Value:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName4"
-        android:layout_width="180dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Conversion History:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="180dp"
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="190dp"
         android:layout_height="42dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="14dp"
-        android:ems="10"
-        android:inputType="textPersonName"
         android:text="Kilometers Value:"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="210dp"
+        android:layout_height="42dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="14dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Conversion:"
+        android:layout_marginTop="10dp"
+        android:text="Conversion History:"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="180dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:text="Miles Value:"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <EditText
         android:id="@+id/editTextNumberDecimal"
@@ -66,9 +50,11 @@
         android:layout_marginLeft="32dp"
         android:background="@android:drawable/divider_horizontal_textfield"
         android:ems="10"
+        android:gravity="right"
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName2"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName2" />
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView8"
+        app:layout_constraintStart_toEndOf="@+id/textView8" />
 
     <Button
         android:id="@+id/button2"
@@ -78,8 +64,9 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="10dp"
         android:text="Convert"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <Button
         android:id="@+id/button3"
@@ -89,6 +76,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="14dp"
         android:text="Clear"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -100,8 +88,9 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="14dp"
         android:background="@android:drawable/divider_horizontal_textfield"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -109,9 +98,9 @@
         android:layout_height="73dp"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName">
+        app:layout_constraintTop_toBottomOf="@+id/textView7">
 
         <RadioButton
             android:id="@+id/radioButton"
@@ -124,17 +113,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Kilometers to Miles" />
+
     </RadioGroup>
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="160dp"
         android:layout_height="42dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
         android:background="@android:drawable/divider_horizontal_textfield"
+        android:gravity="right"
+        android:textSize="24sp"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName3"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView9"
+        app:layout_constraintStart_toEndOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="180dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Conversion:"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
