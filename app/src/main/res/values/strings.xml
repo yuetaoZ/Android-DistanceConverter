@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Distance Converter</string>
+    <string name="miles_value">Miles Value:</string>
 </resources>

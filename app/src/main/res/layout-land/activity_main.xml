@@ -92,12 +92,14 @@
             android:id="@+id/radioButtonMilesToKilometers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="radioClicked"
             android:text="Miles to Kilometers" />
 
         <RadioButton
             android:id="@+id/radioButtonKilometersToMiles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="radioClicked"
             android:text="Kilometers to Miles" />
 
     </RadioGroup>
