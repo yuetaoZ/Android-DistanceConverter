@@ -11,7 +11,7 @@
         android:layout_width="190dp"
         android:layout_height="42dp"
         android:layout_marginTop="12dp"
-        android:text="Kilometers Value:"
+        android:text="@string/kilometers_value"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/inputLabel"
         app:layout_constraintTop_toBottomOf="@+id/convertButton" />
@@ -20,21 +20,23 @@
         android:id="@+id/conversionHistoryLabel"
         android:layout_width="210dp"
         android:layout_height="42dp"
-        android:text="Conversion History:"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="@string/conversion_history"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/conversionLabel"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <TextView
         android:id="@+id/inputLabel"
         android:layout_width="190dp"
         android:layout_height="42dp"
-        android:layout_marginStart="85dp"
-        android:layout_marginLeft="85dp"
-        android:text="Miles Value:"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
+        android:text="@string/miles_value"
         android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/radioGroup"
-        app:layout_constraintTop_toTopOf="@+id/radioGroup" />
+        app:layout_constraintStart_toEndOf="@+id/conversionLabel"
+        app:layout_constraintTop_toTopOf="@+id/conversionLabel" />
 
     <EditText
         android:id="@+id/inputValue"
@@ -42,39 +44,44 @@
         android:layout_height="42dp"
         android:layout_marginStart="22dp"
         android:layout_marginLeft="22dp"
+        android:autofillHints=""
         android:background="@android:drawable/divider_horizontal_textfield"
         android:ems="10"
-        android:gravity="right"
-        android:inputType="numberDecimal"
+        android:gravity="end"
+        android:inputType="number|numberDecimal"
         android:textSize="24sp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/inputLabel"
         app:layout_constraintStart_toEndOf="@+id/inputLabel" />
 
     <Button
         android:id="@+id/convertButton"
-        android:layout_width="280dp"
+        android:layout_width="380dp"
         android:layout_height="60dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="12dp"
-        android:text="Convert"
+        android:layout_marginTop="8dp"
+        android:onClick="convertButtonClicked"
+        android:text="@string/convert"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/inputValue"
         app:layout_constraintStart_toStartOf="@+id/inputLabel"
         app:layout_constraintTop_toBottomOf="@+id/inputLabel" />
 
     <Button
         android:id="@+id/clearButton"
-        android:layout_width="280dp"
+        android:layout_width="380dp"
         android:layout_height="60dp"
-        android:text="Clear"
+        android:layout_marginTop="5dp"
+        android:text="@string/clear"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/conversionLabel"
         app:layout_constraintTop_toBottomOf="@+id/conversionHistoryRecord" />
 
     <TextView
         android:id="@+id/conversionHistoryRecord"
-        android:layout_width="280dp"
+        android:layout_width="380dp"
         android:layout_height="100dp"
+        android:layout_marginTop="10dp"
         android:background="@android:drawable/divider_horizontal_textfield"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/conversionLabel"
@@ -85,6 +92,7 @@
         android:layout_width="207dp"
         android:layout_height="73dp"
         android:layout_marginTop="5dp"
+        android:checkedButton="@id/radioButtonMilesToKilometers"
         app:layout_constraintStart_toStartOf="@+id/conversionLabel"
         app:layout_constraintTop_toBottomOf="@+id/conversionLabel">
 
@@ -93,14 +101,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="radioClicked"
-            android:text="Miles to Kilometers" />
+            android:text="@string/miles_to_kilometers" />
 
         <RadioButton
             android:id="@+id/radioButtonKilometersToMiles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="radioClicked"
-            android:text="Kilometers to Miles" />
+            android:text="@string/kilometers_to_miles" />
 
     </RadioGroup>
 
@@ -111,10 +119,11 @@
         android:layout_marginStart="22dp"
         android:layout_marginLeft="22dp"
         android:background="@android:drawable/divider_horizontal_textfield"
-        android:gravity="right"
+        android:gravity="end"
         android:textSize="24sp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/outputLabel"
+        app:layout_constraintEnd_toEndOf="@+id/inputValue"
         app:layout_constraintStart_toEndOf="@+id/outputLabel" />
 
     <TextView
@@ -124,7 +133,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="10dp"
-        android:text="Conversion:"
+        android:text="@string/conversion"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
