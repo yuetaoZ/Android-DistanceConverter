@@ -1,5 +1,6 @@
 package com.example.distanceconverter;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -13,11 +14,14 @@ import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
     private boolean convertFromMilesToKilometers = true;
+    private TextView convertHistorySlot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        convertHistorySlot = findViewById(id.conversionHistoryRecord);
     }
 
     public void radioClicked(View v) {
@@ -48,11 +52,11 @@ public class MainActivity extends AppCompatActivity {
             outputValueSlot.setText(new DecimalFormat("##.#").format(outputNumber));
 
             updateConvertHistory(inputNumber, outputNumber);
+            inputValueSlot.setText("");
         }
     }
 
     private void updateConvertHistory(double inputNumber, double outputNumber) {
-        TextView convertHistorySlot = findViewById(id.conversionHistoryRecord);
         String convertHistory = convertHistorySlot.getText().toString();
         String inputType, outputType;
         inputType = convertFromMilesToKilometers == true ? " Mi" : " Km";
@@ -63,5 +67,27 @@ public class MainActivity extends AppCompatActivity {
                                     + convertHistory);
     }
 
+    public void clearConvertHistory(View v) {
+        TextView outputValueSlot = findViewById(id.outputValue);
+
+        convertHistorySlot.setText("");
+        outputValueSlot.setText("");
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+
+        outState.putString("CONVERT_HISTORY", convertHistorySlot.getText().toString());
+
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        // Call super first
+        super.onRestoreInstanceState(savedInstanceState);
+
+        convertHistorySlot.setText(savedInstanceState.getString("CONVERT_HISTORY"));
+    }
 
 }
