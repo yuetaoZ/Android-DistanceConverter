@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         convertHistorySlot = findViewById(id.conversionHistoryRecord);
+        convertHistorySlot.setMovementMethod(new ScrollingMovementMethod());
     }
 
     public void radioClicked(View v) {

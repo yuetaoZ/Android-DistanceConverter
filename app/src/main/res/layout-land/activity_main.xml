@@ -85,6 +85,7 @@
         android:layout_height="100dp"
         android:layout_marginTop="10dp"
         android:background="@android:drawable/divider_horizontal_textfield"
+        android:scrollbars="vertical"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/conversionLabel"
         app:layout_constraintTop_toBottomOf="@+id/conversionHistoryLabel" />
